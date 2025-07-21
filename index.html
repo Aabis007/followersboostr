@@ -1,133 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FollowersBoostr — Futuristic Panel</title>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-<style>
-body {
-  margin: 0;
-  font-family: 'Orbitron', sans-serif;
-  background: radial-gradient(circle at center, #0f2027, #203a43, #2c5364);
-  color: #0ff;
-  overflow-x: hidden;
-}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FollowersBoostr — Futuristic Panel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: radial-gradient(circle at center, #0f2027, #203a43, #2c5364);
+      color: #0ff;
+      overflow-x: hidden;
+    }
 
-.grid-bg {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: linear-gradient(transparent 1px, #0ff1 1px),
-              linear-gradient(90deg, transparent 1px, #0ff1 1px);
-  background-size: 50px 50px;
-  z-index: 0;
-  animation: gridMove 20s linear infinite;
-  opacity: 0.1;
-}
+    .grid-bg {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(transparent 1px, #0ff1 1px),
+                  linear-gradient(90deg, transparent 1px, #0ff1 1px);
+      background-size: 50px 50px;
+      z-index: 0;
+      animation: gridMove 20s linear infinite;
+      opacity: 0.1;
+    }
 
-@keyframes gridMove {
-  0% {background-position: 0 0;}
-  100% {background-position: 50px 50px;}
-}
+    @keyframes gridMove {
+      0% {background-position: 0 0;}
+      100% {background-position: 50px 50px;}
+    }
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(0,0,0,0.8);
-  padding: 10px 20px;
-  box-shadow: 0 0 10px #0ff;
-  position: sticky;
-  top: 0;
-  z-index: 1;
-}
-nav h2 {
-  margin: 0;
-  color: #0ff;
-  text-shadow: 0 0 5px #0ff;
-}
-nav .links a {
-  color: #fff;
-  margin: 0 10px;
-  text-decoration: none;
-  transition: 0.3s;
-}
-nav .links a:hover {
-  color: #0ff;
-  text-shadow: 0 0 10px #0ff;
-}
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0,0,0,0.8);
+      padding: 10px 20px;
+      box-shadow: 0 0 10px #0ff;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+    nav h2 {
+      margin: 0;
+      color: #0ff;
+      text-shadow: 0 0 5px #0ff;
+    }
+    nav .links a {
+      color: #fff;
+      margin: 0 10px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    nav .links a:hover {
+      color: #0ff;
+      text-shadow: 0 0 10px #0ff;
+    }
 
-.hero {
-  text-align: center;
-  padding: 80px 20px;
-  max-width: 800px;
-  margin: auto;
-  z-index: 1;
-  position: relative;
-}
-.hero h1 {
-  font-size: 3rem;
-  text-shadow: 0 0 20px #0ff;
-}
-.hero p {
-  background: rgba(255,255,255,0.05);
-  padding: 10px 20px;
-  border: 1px solid #0ff3;
-  border-radius: 10px;
-  text-shadow: 0 0 5px #0ff;
-}
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      max-width: 800px;
+      margin: auto;
+      z-index: 1;
+      position: relative;
+      display: none;
+    }
 
-section {
-  max-width: 700px;
-  margin: 20px auto;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid #0ff3;
-  box-shadow: 0 0 10px #0ff3;
-  color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  display: none;
-  position: relative;
-  z-index: 1;
-}
-section.active {
-  display: block;
-  animation: fadeIn 0.8s ease forwards;
-}
+    .hero.active,
+    section.active {
+      display: block;
+      animation: fadeIn 0.8s ease forwards;
+    }
 
-@keyframes fadeIn {
-  from {opacity: 0; transform: scale(0.95);}
-  to {opacity: 1; transform: scale(1);}
-}
+    section {
+      max-width: 700px;
+      margin: 20px auto;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid #0ff3;
+      box-shadow: 0 0 10px #0ff3;
+      color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      position: relative;
+      z-index: 1;
+    }
 
-form label {
-  display: block;
-  margin: 10px 0 5px;
-}
-form input, form select {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 15px;
-  border: 1px solid #0ff3;
-  border-radius: 4px;
-  background: rgba(0,0,0,0.5);
-  color: #fff;
-}
-form button {
-  background: #0ff;
-  color: #000;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-form button:hover {
-  background: #00faff;
-  transform: scale(1.05);
-}
-</style>
+    @keyframes fadeIn {
+      from {opacity: 0; transform: scale(0.95);}
+      to {opacity: 1; transform: scale(1);}
+    }
+
+    form label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+    form input, form select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #0ff3;
+      border-radius: 4px;
+      background: rgba(0,0,0,0.5);
+      color: #fff;
+    }
+    form button {
+      background: #0ff;
+      color: #000;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    form button:hover {
+      background: #00faff;
+      transform: scale(1.05);
+    }
+  </style>
 </head>
 <body>
 
@@ -144,16 +135,18 @@ form button:hover {
   </div>
 </nav>
 
+<!-- 👇 Hidden by default -->
 <div id="hero" class="hero">
   <h1>Welcome to FollowersBoostr</h1>
   <p>🚀 Since <strong>2023</strong>, we help you boost your Instagram followers, likes & views with lightning speed and futuristic technology. Experience growth like never before — professional, reliable, and fast.</p>
 </div>
 
+<!-- 👇 THIS IS NOW VISIBLE BY DEFAULT -->
 <section id="order" class="active">
   <h3>New Order</h3>
   <form action="https://formsubmit.co/followersboostr007@gmail.com" method="POST">
     <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_next" value="thankyou.html">
+    <input type="hidden" name="_next" value="https://aabis007.github.io/followersboostr/thankyou.html">
     <label>Service</label>
     <select name="Service" required>
       <option value="Instagram Followers">Instagram Followers</option>
